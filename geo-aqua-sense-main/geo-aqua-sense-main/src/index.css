@@ -1,0 +1,162 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 210 40% 98%;
+    --foreground: 215 25% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 215 25% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 215 25% 15%;
+
+    --primary: 195 85% 35%;
+    --primary-foreground: 0 0% 100%;
+    
+    --secondary: 145 65% 45%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 210 30% 90%;
+    --muted-foreground: 215 16% 47%;
+
+    --accent: 195 75% 92%;
+    --accent-foreground: 195 85% 25%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 100%;
+
+    --success: 145 65% 45%;
+    --success-foreground: 0 0% 100%;
+
+    --border: 214 30% 88%;
+    --input: 214 30% 88%;
+    --ring: 195 85% 35%;
+
+    --radius: 0.75rem;
+
+    --gradient-primary: linear-gradient(135deg, hsl(195 85% 35%), hsl(195 75% 50%));
+    --gradient-map: linear-gradient(180deg, hsl(195 85% 35% / 0.05), hsl(195 85% 35% / 0));
+    --shadow-elevated: 0 10px 40px -10px hsl(195 85% 35% / 0.2);
+    --shadow-card: 0 2px 8px hsl(215 25% 15% / 0.08);
+    
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+    --sidebar-background: 215 30% 97%;
+    --sidebar-foreground: 215 25% 25%;
+    --sidebar-primary: 195 85% 35%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 195 75% 95%;
+    --sidebar-accent-foreground: 195 85% 25%;
+    --sidebar-border: 214 30% 88%;
+    --sidebar-ring: 195 85% 35%;
+  }
+
+  .dark {
+    --background: 215 30% 8%;
+    --foreground: 210 30% 95%;
+
+    --card: 215 28% 12%;
+    --card-foreground: 210 30% 95%;
+
+    --popover: 215 28% 12%;
+    --popover-foreground: 210 30% 95%;
+
+    --primary: 195 75% 50%;
+    --primary-foreground: 215 30% 8%;
+
+    --secondary: 145 55% 55%;
+    --secondary-foreground: 215 30% 8%;
+
+    --muted: 215 25% 18%;
+    --muted-foreground: 215 15% 65%;
+
+    --accent: 195 65% 20%;
+    --accent-foreground: 195 75% 85%;
+
+    --destructive: 0 62% 45%;
+    --destructive-foreground: 210 30% 95%;
+
+    --warning: 38 82% 55%;
+    --warning-foreground: 215 30% 8%;
+
+    --success: 145 55% 55%;
+    --success-foreground: 215 30% 8%;
+
+    --border: 215 25% 20%;
+    --input: 215 25% 20%;
+    --ring: 195 75% 50%;
+
+    --gradient-primary: linear-gradient(135deg, hsl(195 75% 50%), hsl(195 65% 65%));
+    --gradient-map: linear-gradient(180deg, hsl(195 75% 50% / 0.1), hsl(195 75% 50% / 0));
+    --shadow-elevated: 0 10px 40px -10px hsl(195 75% 50% / 0.3);
+    --shadow-card: 0 2px 8px hsl(0 0% 0% / 0.5);
+
+    --sidebar-background: 215 30% 10%;
+    --sidebar-foreground: 210 30% 90%;
+    --sidebar-primary: 195 75% 50%;
+    --sidebar-primary-foreground: 215 30% 8%;
+    --sidebar-accent: 215 25% 18%;
+    --sidebar-accent-foreground: 195 75% 85%;
+    --sidebar-border: 215 25% 20%;
+    --sidebar-ring: 195 75% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Contain Leaflet's internal z-index stacking so it never bleeds above portal modals */
+.leaflet-map-isolation {
+  isolation: isolate;
+  position: relative;
+  z-index: 0;
+}
+
+/* Scientific ML panel glow animations */
+@keyframes glow-pulse {
+  0%, 100% { box-shadow: 0 0 8px hsl(195 85% 35% / 0.4); }
+  50% { box-shadow: 0 0 24px hsl(195 85% 35% / 0.8); }
+}
+
+@keyframes scan-line {
+  0% { transform: translateY(-100%); opacity: 0; }
+  50% { opacity: 1; }
+  100% { transform: translateY(100%); opacity: 0; }
+}
+
+@keyframes data-stream {
+  0% { opacity: 0; transform: translateX(-10px); }
+  100% { opacity: 1; transform: translateX(0); }
+}
+
+.glow-card {
+  animation: glow-pulse 3s ease-in-out infinite;
+}
+
+.data-stream-item {
+  animation: data-stream 0.4s ease-out forwards;
+}
+
+.ml-grid-bg {
+  background-image:
+    linear-gradient(hsl(195 85% 35% / 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, hsl(195 85% 35% / 0.06) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
