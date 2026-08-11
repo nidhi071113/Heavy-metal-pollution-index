@@ -156,7 +156,7 @@ This allows users to visually compare model performance.
                     ┌─────────────────────────┐
                     │      GeoAI / ML Layer   │
                     │                         │
-                    │ Kriging │ RF │ XGBoost │
+                    │ Kriging │ RF │ XGBoost  │
                     └────────────┬────────────┘
                                  │
                                  ▼
@@ -167,7 +167,8 @@ This allows users to visually compare model performance.
                                  │
                                  ▼
                     ┌─────────────────────────┐
-                    │ Interactive Web Dashboard│
+                    │    Interactive Web      │   
+                    │       Dashboard         │
                     │                         │
                     │ Maps │ Charts │ Risk    │
                     │ Forecasts │ Insights    │
