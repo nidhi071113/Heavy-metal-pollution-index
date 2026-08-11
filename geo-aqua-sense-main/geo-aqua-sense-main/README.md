@@ -1,73 +1,174 @@
-# Welcome to your Lovable project
+# GeoAquaSense — AI-Driven Groundwater Heavy Metal Pollution Intelligence
 
-## Project info
+GeoAquaSense is an interactive GeoAI-based platform for analyzing, visualizing, and assessing heavy-metal contamination in groundwater.
 
-**URL**: https://lovable.dev/projects/b18b9420-a8e0-468c-b686-6d398e210f87
+The system combines groundwater quality data, Heavy Metal Pollution Index (HPI), spatial analysis, geospatial visualization, machine learning models, and AI-assisted scientific insights to help identify pollution hotspots, assess health risks, and support data-driven water-quality decisions.
 
-## How can I edit this code?
+---
 
-There are several ways of editing your application.
+## Overview
 
-**Use Lovable**
+Groundwater contamination by heavy metals such as Arsenic (As), Lead (Pb), Cadmium (Cd), Chromium (Cr), and Nickel (Ni) can pose serious environmental and public-health risks.
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/b18b9420-a8e0-468c-b686-6d398e210f87) and start prompting.
+Traditional groundwater assessment often relies on isolated sampling points and static analysis. GeoAquaSense provides an interactive platform that integrates:
 
-Changes made via Lovable will be committed automatically to this repo.
+- Heavy Metal Pollution Index (HPI)
+- Hazard Index (HI)
+- Geospatial groundwater visualization
+- Pollution hotspot identification
+- Machine learning-based analysis
+- Spatial interpolation using Kriging
+- Random Forest and XGBoost modeling
+- AI-powered scientific interpretation
+- Future pollution-risk forecasting
+- Next-best sampling recommendations
 
-**Use your preferred IDE**
+The goal is to transform raw groundwater measurements into actionable environmental intelligence.
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+---
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+## Key Features
 
-Follow these steps:
+### 1. Groundwater Quality Analysis
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+Analyze groundwater samples using important heavy-metal parameters:
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+- Arsenic (As)
+- Lead (Pb)
+- Cadmium (Cd)
+- Chromium (Cr)
+- Nickel (Ni)
 
-# Step 3: Install the necessary dependencies.
-npm i
+The platform processes groundwater measurements and presents pollution indicators through interactive dashboards.
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
+### 2. Heavy Metal Pollution Index (HPI)
 
-**Edit a file directly in GitHub**
+The system calculates and visualizes HPI-based pollution levels to provide an overall assessment of groundwater quality.
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+HPI values are used to identify locations requiring further investigation and monitoring.
 
-**Use GitHub Codespaces**
+### 3. Hazard Index (HI)
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+The platform incorporates Hazard Index analysis to provide an indication of potential health risk associated with heavy-metal exposure.
 
-## What technologies are used for this project?
+### 4. Interactive Geospatial Visualization
 
-This project is built with:
+Groundwater samples can be explored geographically using interactive maps.
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+The platform supports:
 
-## How can I deploy this project?
+- Sample location visualization
+- Pollution hotspot identification
+- Coordinate-based analysis
+- Spatial patterns
+- Deeper geospatial analytics
 
-Simply open [Lovable](https://lovable.dev/projects/b18b9420-a8e0-468c-b686-6d398e210f87) and click on Share -> Publish.
+Leaflet and React-Leaflet are used for interactive map visualization.
 
-## Can I connect a custom domain to my Lovable project?
+### 5. GeoAI / Machine Learning Analysis
 
-Yes, you can!
+The platform provides an ML analysis layer combining multiple approaches:
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+- Kriging spatial interpolation
+- Random Forest
+- XGBoost
+- Ensemble-based analysis
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+The system uses these approaches to study contamination patterns and generate predictive insights.
+
+### 6. SHAP-Style Explainability
+
+The ML dashboard provides feature-contribution visualization to help understand which parameters contribute most strongly to predicted pollution risk.
+
+Example factors include:
+
+- Arsenic concentration
+- Cadmium concentration
+- Lead concentration
+- Groundwater depth
+- pH
+
+### 7. Pollution Risk Forecasting
+
+The platform provides future-risk visualization using projected HPI trends.
+
+Users can inspect potential changes over future time periods and identify areas requiring additional monitoring.
+
+### 8. AI-Powered Scientific Insights
+
+GeoAquaSense integrates an LLM-based analysis layer to convert groundwater statistics into readable scientific insights.
+
+The AI analysis can provide:
+
+- Potential contamination sources
+- Risk classification
+- Remediation strategies
+- Key findings
+- Pollution trends
+- Hotspot analysis
+- Health-burden interpretation
+- Smart recommendations
+
+### 9. Next-Best Sampling Recommendation
+
+The system provides a recommended next sampling location based on spatial uncertainty and pollution patterns.
+
+This can help prioritize field sampling resources toward areas that may provide additional information about groundwater contamination.
+
+### 10. Model Comparison
+
+The dashboard provides comparative visualization of different predictive approaches, including:
+
+- Kriging
+- Random Forest
+- XGBoost
+- Proposed Ensemble approach
+
+This allows users to visually compare model performance.
+
+---
+
+## System Architecture
+
+```text
+                    ┌─────────────────────────┐
+                    │     Groundwater Data    │
+                    │  Heavy Metal Samples    │
+                    └────────────┬────────────┘
+                                 │
+                                 ▼
+                    ┌─────────────────────────┐
+                    │     Data Processing     │
+                    │  Cleaning & Preparation │
+                    └────────────┬────────────┘
+                                 │
+                ┌────────────────┼────────────────┐
+                │                │                │
+                ▼                ▼                ▼
+          ┌──────────┐    ┌────────────┐   ┌────────────┐
+          │   HPI    │    │     HI     │   │  Spatial   │
+          │ Analysis │    │  Analysis  │   │  Analysis  │
+          └────┬─────┘    └─────┬──────┘   └─────┬──────┘
+               │                │                │
+               └────────────────┼────────────────┘
+                                │
+                                ▼
+                    ┌─────────────────────────┐
+                    │      GeoAI / ML Layer   │
+                    │                         │
+                    │ Kriging │ RF │ XGBoost │
+                    └────────────┬────────────┘
+                                 │
+                                 ▼
+                    ┌─────────────────────────┐
+                    │   AI Scientific Layer   │
+                    │   LLM-based Insights    │
+                    └────────────┬────────────┘
+                                 │
+                                 ▼
+                    ┌─────────────────────────┐
+                    │ Interactive Web Dashboard│
+                    │                         │
+                    │ Maps │ Charts │ Risk    │
+                    │ Forecasts │ Insights    │
+                    └─────────────────────────┘
